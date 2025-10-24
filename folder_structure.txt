@@ -1,0 +1,574 @@
+|   README.md
+|   
++---Application ensab + guides
+    +---ensab_v2
+    |   |   .htaccess
+    |   |   footer.php
+    |   |   index.php
+    |   |   java.java
+    |   |   
+    |   +---auth
+    |   |       inscrire.php
+    |   |       
+    |   +---blindsqli
+    |   |   |   index.php
+    |   |   |   
+    |   |   +---assets
+    |   |   |   +---img
+    |   |   |           Blind-SQL-Injection-.webp
+    |   |   |           
+    |   |   +---auth
+    |   |           header.php
+    |   |           index.php
+    |   |           logout.php
+    |   |           
+    |   +---bruteForce
+    |   |   |   index.php
+    |   |   |   
+    |   |   +---assets
+    |   |   |   +---css
+    |   |   |   |       style.css
+    |   |   |   |       
+    |   |   |   +---img
+    |   |   |           brute-force-attack-1.webp
+    |   |   |           brute-force-attack.jpg
+    |   |   |           brute-force-attack.png
+    |   |   |           
+    |   |   +---auth
+    |   |   |   +---low
+    |   |   |   |       header.php
+    |   |   |   |       index.php
+    |   |   |   |       login.php
+    |   |   |   |       logout.php
+    |   |   |   |       
+    |   |   |   +---medium
+    |   |   |           header.php
+    |   |   |           index.php
+    |   |   |           login.php
+    |   |   |           logout.php
+    |   |   |           token.php
+    |   |   |           
+    |   |   +---database
+    |   |           config.php
+    |   |           database.sql
+    |   |           
+    |   +---includes
+    |   |       config.php
+    |   |       display_errors.php
+    |   |       
+    |   +---installation
+    |   |       index.php
+    |   |       install.php
+    |   |       
+    |   +---query_string
+    |   |       ajout_note.php
+    |   |       etudiants.php
+    |   |       footer.php
+    |   |       header.php
+    |   |       index.php
+    |   |       login.php
+    |   |       logout.php
+    |   |       notes.php
+    |   |       profile.php
+    |   |       
+    |   +---sql_injection
+    |   |       ajout_note.php
+    |   |       etudiants.php
+    |   |       footer.php
+    |   |       header.php
+    |   |       index.php
+    |   |       login.php
+    |   |       logout.php
+    |   |       notes.php
+    |   |       profile.php
+    |   |       
+    |   +---uploads
+    |   |       profile.jpg
+    |   |       
+    |   +---upload_file
+    |   |   |   header.php
+    |   |   |   index.php
+    |   |   |   
+    |   |   +---uploads
+    |   |   |       1200px-Jupyter_logo.svg.webp
+    |   |   |       
+    |   |   +---user
+    |   |   |       index.php
+    |   |   |       login.php
+    |   |   |       logout.php
+    |   |   |       
+    |   |   +---vendor
+    |   |       +---css
+    |   |       |   |   bootstrap-social.css
+    |   |       |   |   bootstrap-theme.min.css
+    |   |       |   |   bootstrap.css
+    |   |       |   |   bootstrap.min.css
+    |   |       |   |   dt.css
+    |   |       |   |   font-awesome.min.css
+    |   |       |   |   linearicons.css
+    |   |       |   |   metisMenu.min.css
+    |   |       |   |   morris.css
+    |   |       |   |   startmin.css
+    |   |       |   |   style.css
+    |   |       |   |   style.min.css
+    |   |       |   |   timeline.css
+    |   |       |   |   
+    |   |       |   +---bootstrap
+    |   |       |   |       bootstrap-grid.css
+    |   |       |   |       bootstrap-reboot.css
+    |   |       |   |       bootstrap.css
+    |   |       |   |       
+    |   |       |   +---dataTables
+    |   |       |           dataTables.bootstrap.css
+    |   |       |           dataTables.responsive.css
+    |   |       |           
+    |   |       +---datatables
+    |   |       |   |   dataTables.bootstrap4.min.css
+    |   |       |   |   dataTables.bootstrap4.min.js
+    |   |       |   |   jquery.dataTables.min.js
+    |   |       |   |   license.txt
+    |   |       |   |   Readme.md
+    |   |       |   |   
+    |   |       |   +---lang
+    |   |       |           ar.json
+    |   |       |           en.json
+    |   |       |           fr.json
+    |   |       |           
+    |   |       +---fonts
+    |   |       |       fontawesome-webfont.eot
+    |   |       |       fontawesome-webfont.svg
+    |   |       |       fontawesome-webfont.ttf
+    |   |       |       fontawesome-webfont.woff
+    |   |       |       fontawesome-webfont.woff2
+    |   |       |       FontAwesome.otf
+    |   |       |       glyphicons-halflings-regular.eot
+    |   |       |       glyphicons-halflings-regular.svg
+    |   |       |       glyphicons-halflings-regular.ttf
+    |   |       |       glyphicons-halflings-regular.woff
+    |   |       |       glyphicons-halflings-regular.woff2
+    |   |       |       Linearicons-Free.eot
+    |   |       |       Linearicons-Free.svg
+    |   |       |       Linearicons-Free.ttf
+    |   |       |       Linearicons-Free.woff
+    |   |       |       Linearicons-Free.woff2
+    |   |       |       OFL.txt
+    |   |       |       Poppins-Black.ttf
+    |   |       |       Poppins-BlackItalic.ttf
+    |   |       |       Poppins-Bold.ttf
+    |   |       |       Poppins-BoldItalic.ttf
+    |   |       |       Poppins-ExtraBold.ttf
+    |   |       |       Poppins-ExtraBoldItalic.ttf
+    |   |       |       Poppins-ExtraLight.ttf
+    |   |       |       Poppins-ExtraLightItalic.ttf
+    |   |       |       Poppins-Italic.ttf
+    |   |       |       Poppins-Light.ttf
+    |   |       |       Poppins-LightItalic.ttf
+    |   |       |       Poppins-Medium.ttf
+    |   |       |       Poppins-MediumItalic.ttf
+    |   |       |       Poppins-Regular.ttf
+    |   |       |       Poppins-SemiBold.ttf
+    |   |       |       Poppins-SemiBoldItalic.ttf
+    |   |       |       Poppins-Thin.ttf
+    |   |       |       Poppins-ThinItalic.ttf
+    |   |       |       
+    |   |       +---js
+    |   |           |   bootstrap.min.js
+    |   |           |   dt.js
+    |   |           |   easing.min.js
+    |   |           |   flot-data.js
+    |   |           |   jquery-2.2.4.min.js
+    |   |           |   jquery.counterup.min.js
+    |   |           |   jquery.magnific-popup.min.js
+    |   |           |   jquery.min.js
+    |   |           |   main.js
+    |   |           |   metisMenu.min.js
+    |   |           |   morris-data.js
+    |   |           |   morris.min.js
+    |   |           |   raphael.min.js
+    |   |           |   startmin.js
+    |   |           |   superfish.min.js
+    |   |           |   
+    |   |           +---dataTables
+    |   |           |       dataTables.bootstrap.min.js
+    |   |           |       jquery.dataTables.min.js
+    |   |           |       
+    |   |           +---datepicker
+    |   |           |   +---css
+    |   |           |   |       bootstrap-datepicker.css
+    |   |           |   |       bootstrap-datepicker.css.map
+    |   |           |   |       bootstrap-datepicker.min.css
+    |   |           |   |       bootstrap-datepicker.standalone.css
+    |   |           |   |       bootstrap-datepicker.standalone.css.map
+    |   |           |   |       bootstrap-datepicker.standalone.min.css
+    |   |           |   |       bootstrap-datepicker3.css
+    |   |           |   |       bootstrap-datepicker3.css.map
+    |   |           |   |       bootstrap-datepicker3.min.css
+    |   |           |   |       bootstrap-datepicker3.standalone.css
+    |   |           |   |       bootstrap-datepicker3.standalone.css.map
+    |   |           |   |       bootstrap-datepicker3.standalone.min.css
+    |   |           |   |       
+    |   |           |   +---js
+    |   |           |   |       bootstrap-datepicker.js
+    |   |           |   |       bootstrap-datepicker.min.js
+    |   |           |   |       
+    |   |           |   +---locales
+    |   |           |           bootstrap-datepicker.ar.min.js
+    |   |           |           bootstrap-datepicker.en-AU.min.js
+    |   |           |           bootstrap-datepicker.fr.min.js
+    |   |           |           
+    |   |           +---flot
+    |   |                   excanvas.min.js
+    |   |                   jquery.colorhelpers.js
+    |   |                   jquery.flot.canvas.js
+    |   |                   jquery.flot.categories.js
+    |   |                   jquery.flot.crosshair.js
+    |   |                   jquery.flot.errorbars.js
+    |   |                   jquery.flot.fillbetween.js
+    |   |                   jquery.flot.image.js
+    |   |                   jquery.flot.js
+    |   |                   jquery.flot.navigate.js
+    |   |                   jquery.flot.pie.js
+    |   |                   jquery.flot.resize.js
+    |   |                   jquery.flot.selection.js
+    |   |                   jquery.flot.stack.js
+    |   |                   jquery.flot.symbol.js
+    |   |                   jquery.flot.threshold.js
+    |   |                   jquery.flot.time.js
+    |   |                   jquery.flot.tooltip.min.js
+    |   |                   
+    |   +---vendor
+    |   |   +---css
+    |   |   |   |   bootstrap-social.css
+    |   |   |   |   bootstrap-theme.min.css
+    |   |   |   |   bootstrap.css
+    |   |   |   |   bootstrap.min.css
+    |   |   |   |   dt.css
+    |   |   |   |   font-awesome.min.css
+    |   |   |   |   linearicons.css
+    |   |   |   |   metisMenu.min.css
+    |   |   |   |   morris.css
+    |   |   |   |   startmin.css
+    |   |   |   |   style.css
+    |   |   |   |   style.min.css
+    |   |   |   |   timeline.css
+    |   |   |   |   
+    |   |   |   +---bootstrap
+    |   |   |   |       bootstrap-grid.css
+    |   |   |   |       bootstrap-reboot.css
+    |   |   |   |       bootstrap.css
+    |   |   |   |       
+    |   |   |   +---dataTables
+    |   |   |           dataTables.bootstrap.css
+    |   |   |           dataTables.responsive.css
+    |   |   |           
+    |   |   +---datatables
+    |   |   |   |   dataTables.bootstrap4.min.css
+    |   |   |   |   dataTables.bootstrap4.min.js
+    |   |   |   |   jquery.dataTables.min.js
+    |   |   |   |   license.txt
+    |   |   |   |   Readme.md
+    |   |   |   |   
+    |   |   |   +---lang
+    |   |   |           ar.json
+    |   |   |           en.json
+    |   |   |           fr.json
+    |   |   |           
+    |   |   +---fonts
+    |   |   |       fontawesome-webfont.eot
+    |   |   |       fontawesome-webfont.svg
+    |   |   |       fontawesome-webfont.ttf
+    |   |   |       fontawesome-webfont.woff
+    |   |   |       fontawesome-webfont.woff2
+    |   |   |       FontAwesome.otf
+    |   |   |       glyphicons-halflings-regular.eot
+    |   |   |       glyphicons-halflings-regular.svg
+    |   |   |       glyphicons-halflings-regular.ttf
+    |   |   |       glyphicons-halflings-regular.woff
+    |   |   |       glyphicons-halflings-regular.woff2
+    |   |   |       Linearicons-Free.eot
+    |   |   |       Linearicons-Free.svg
+    |   |   |       Linearicons-Free.ttf
+    |   |   |       Linearicons-Free.woff
+    |   |   |       Linearicons-Free.woff2
+    |   |   |       OFL.txt
+    |   |   |       Poppins-Black.ttf
+    |   |   |       Poppins-BlackItalic.ttf
+    |   |   |       Poppins-Bold.ttf
+    |   |   |       Poppins-BoldItalic.ttf
+    |   |   |       Poppins-ExtraBold.ttf
+    |   |   |       Poppins-ExtraBoldItalic.ttf
+    |   |   |       Poppins-ExtraLight.ttf
+    |   |   |       Poppins-ExtraLightItalic.ttf
+    |   |   |       Poppins-Italic.ttf
+    |   |   |       Poppins-Light.ttf
+    |   |   |       Poppins-LightItalic.ttf
+    |   |   |       Poppins-Medium.ttf
+    |   |   |       Poppins-MediumItalic.ttf
+    |   |   |       Poppins-Regular.ttf
+    |   |   |       Poppins-SemiBold.ttf
+    |   |   |       Poppins-SemiBoldItalic.ttf
+    |   |   |       Poppins-Thin.ttf
+    |   |   |       Poppins-ThinItalic.ttf
+    |   |   |       
+    |   |   +---img
+    |   |   |       ensa.png
+    |   |   |       uh1.png
+    |   |   |       uhp.png
+    |   |   |       
+    |   |   +---js
+    |   |       |   bootstrap.min.js
+    |   |       |   dt.js
+    |   |       |   easing.min.js
+    |   |       |   flot-data.js
+    |   |       |   jquery-2.2.4.min.js
+    |   |       |   jquery.counterup.min.js
+    |   |       |   jquery.magnific-popup.min.js
+    |   |       |   jquery.min.js
+    |   |       |   main.js
+    |   |       |   metisMenu.min.js
+    |   |       |   morris-data.js
+    |   |       |   morris.min.js
+    |   |       |   raphael.min.js
+    |   |       |   startmin.js
+    |   |       |   superfish.min.js
+    |   |       |   
+    |   |       +---dataTables
+    |   |       |       dataTables.bootstrap.min.js
+    |   |       |       jquery.dataTables.min.js
+    |   |       |       
+    |   |       +---datepicker
+    |   |       |   +---css
+    |   |       |   |       bootstrap-datepicker.css
+    |   |       |   |       bootstrap-datepicker.css.map
+    |   |       |   |       bootstrap-datepicker.min.css
+    |   |       |   |       bootstrap-datepicker.standalone.css
+    |   |       |   |       bootstrap-datepicker.standalone.css.map
+    |   |       |   |       bootstrap-datepicker.standalone.min.css
+    |   |       |   |       bootstrap-datepicker3.css
+    |   |       |   |       bootstrap-datepicker3.css.map
+    |   |       |   |       bootstrap-datepicker3.min.css
+    |   |       |   |       bootstrap-datepicker3.standalone.css
+    |   |       |   |       bootstrap-datepicker3.standalone.css.map
+    |   |       |   |       bootstrap-datepicker3.standalone.min.css
+    |   |       |   |       
+    |   |       |   +---js
+    |   |       |   |       bootstrap-datepicker.js
+    |   |       |   |       bootstrap-datepicker.min.js
+    |   |       |   |       
+    |   |       |   +---locales
+    |   |       |           bootstrap-datepicker.ar.min.js
+    |   |       |           bootstrap-datepicker.en-AU.min.js
+    |   |       |           bootstrap-datepicker.fr.min.js
+    |   |       |           
+    |   |       +---flot
+    |   |               excanvas.min.js
+    |   |               jquery.colorhelpers.js
+    |   |               jquery.flot.canvas.js
+    |   |               jquery.flot.categories.js
+    |   |               jquery.flot.crosshair.js
+    |   |               jquery.flot.errorbars.js
+    |   |               jquery.flot.fillbetween.js
+    |   |               jquery.flot.image.js
+    |   |               jquery.flot.js
+    |   |               jquery.flot.navigate.js
+    |   |               jquery.flot.pie.js
+    |   |               jquery.flot.resize.js
+    |   |               jquery.flot.selection.js
+    |   |               jquery.flot.stack.js
+    |   |               jquery.flot.symbol.js
+    |   |               jquery.flot.threshold.js
+    |   |               jquery.flot.time.js
+    |   |               jquery.flot.tooltip.min.js
+    |   |               
+    |   +---xss
+    |       |   header.php
+    |       |   index.php
+    |       |   
+    |       +---admin
+    |       |       ajout_note.php
+    |       |       etudiants.php
+    |       |       footer.php
+    |       |       header.php
+    |       |       index.php
+    |       |       login.php
+    |       |       logout.php
+    |       |       notes.php
+    |       |       profile.php
+    |       |       
+    |       +---includes
+    |       |       config.php
+    |       |       display_errors.php
+    |       |       
+    |       +---uploads
+    |       |       1200px-Jupyter_logo.svg.webp
+    |       |       capt.PNG
+    |       |       conf.PNG
+    |       |       loss.PNG
+    |       |       MVC_design_pattern-4.webp
+    |       |       
+    |       +---user
+    |       |       index.php
+    |       |       login.php
+    |       |       logout.php
+    |       |       
+    |       +---vendor
+    |           +---css
+    |           |   |   bootstrap-social.css
+    |           |   |   bootstrap-theme.min.css
+    |           |   |   bootstrap.css
+    |           |   |   bootstrap.min.css
+    |           |   |   dt.css
+    |           |   |   font-awesome.min.css
+    |           |   |   linearicons.css
+    |           |   |   metisMenu.min.css
+    |           |   |   morris.css
+    |           |   |   startmin.css
+    |           |   |   style.css
+    |           |   |   style.min.css
+    |           |   |   timeline.css
+    |           |   |   
+    |           |   +---bootstrap
+    |           |   |       bootstrap-grid.css
+    |           |   |       bootstrap-reboot.css
+    |           |   |       bootstrap.css
+    |           |   |       
+    |           |   +---dataTables
+    |           |           dataTables.bootstrap.css
+    |           |           dataTables.responsive.css
+    |           |           
+    |           +---datatables
+    |           |   |   dataTables.bootstrap4.min.css
+    |           |   |   dataTables.bootstrap4.min.js
+    |           |   |   jquery.dataTables.min.js
+    |           |   |   license.txt
+    |           |   |   Readme.md
+    |           |   |   
+    |           |   +---lang
+    |           |           ar.json
+    |           |           en.json
+    |           |           fr.json
+    |           |           
+    |           +---fonts
+    |           |       fontawesome-webfont.eot
+    |           |       fontawesome-webfont.svg
+    |           |       fontawesome-webfont.ttf
+    |           |       fontawesome-webfont.woff
+    |           |       fontawesome-webfont.woff2
+    |           |       FontAwesome.otf
+    |           |       glyphicons-halflings-regular.eot
+    |           |       glyphicons-halflings-regular.svg
+    |           |       glyphicons-halflings-regular.ttf
+    |           |       glyphicons-halflings-regular.woff
+    |           |       glyphicons-halflings-regular.woff2
+    |           |       Linearicons-Free.eot
+    |           |       Linearicons-Free.svg
+    |           |       Linearicons-Free.ttf
+    |           |       Linearicons-Free.woff
+    |           |       Linearicons-Free.woff2
+    |           |       OFL.txt
+    |           |       Poppins-Black.ttf
+    |           |       Poppins-BlackItalic.ttf
+    |           |       Poppins-Bold.ttf
+    |           |       Poppins-BoldItalic.ttf
+    |           |       Poppins-ExtraBold.ttf
+    |           |       Poppins-ExtraBoldItalic.ttf
+    |           |       Poppins-ExtraLight.ttf
+    |           |       Poppins-ExtraLightItalic.ttf
+    |           |       Poppins-Italic.ttf
+    |           |       Poppins-Light.ttf
+    |           |       Poppins-LightItalic.ttf
+    |           |       Poppins-Medium.ttf
+    |           |       Poppins-MediumItalic.ttf
+    |           |       Poppins-Regular.ttf
+    |           |       Poppins-SemiBold.ttf
+    |           |       Poppins-SemiBoldItalic.ttf
+    |           |       Poppins-Thin.ttf
+    |           |       Poppins-ThinItalic.ttf
+    |           |       
+    |           +---js
+    |               |   bootstrap.min.js
+    |               |   dt.js
+    |               |   easing.min.js
+    |               |   flot-data.js
+    |               |   jquery-2.2.4.min.js
+    |               |   jquery.counterup.min.js
+    |               |   jquery.magnific-popup.min.js
+    |               |   jquery.min.js
+    |               |   main.js
+    |               |   metisMenu.min.js
+    |               |   morris-data.js
+    |               |   morris.min.js
+    |               |   raphael.min.js
+    |               |   startmin.js
+    |               |   superfish.min.js
+    |               |   
+    |               +---dataTables
+    |               |       dataTables.bootstrap.min.js
+    |               |       jquery.dataTables.min.js
+    |               |       
+    |               +---datepicker
+    |               |   +---css
+    |               |   |       bootstrap-datepicker.css
+    |               |   |       bootstrap-datepicker.css.map
+    |               |   |       bootstrap-datepicker.min.css
+    |               |   |       bootstrap-datepicker.standalone.css
+    |               |   |       bootstrap-datepicker.standalone.css.map
+    |               |   |       bootstrap-datepicker.standalone.min.css
+    |               |   |       bootstrap-datepicker3.css
+    |               |   |       bootstrap-datepicker3.css.map
+    |               |   |       bootstrap-datepicker3.min.css
+    |               |   |       bootstrap-datepicker3.standalone.css
+    |               |   |       bootstrap-datepicker3.standalone.css.map
+    |               |   |       bootstrap-datepicker3.standalone.min.css
+    |               |   |       
+    |               |   +---js
+    |               |   |       bootstrap-datepicker.js
+    |               |   |       bootstrap-datepicker.min.js
+    |               |   |       
+    |               |   +---locales
+    |               |           bootstrap-datepicker.ar.min.js
+    |               |           bootstrap-datepicker.en-AU.min.js
+    |               |           bootstrap-datepicker.fr.min.js
+    |               |           
+    |               +---flot
+    |                       excanvas.min.js
+    |                       jquery.colorhelpers.js
+    |                       jquery.flot.canvas.js
+    |                       jquery.flot.categories.js
+    |                       jquery.flot.crosshair.js
+    |                       jquery.flot.errorbars.js
+    |                       jquery.flot.fillbetween.js
+    |                       jquery.flot.image.js
+    |                       jquery.flot.js
+    |                       jquery.flot.navigate.js
+    |                       jquery.flot.pie.js
+    |                       jquery.flot.resize.js
+    |                       jquery.flot.selection.js
+    |                       jquery.flot.stack.js
+    |                       jquery.flot.symbol.js
+    |                       jquery.flot.threshold.js
+    |                       jquery.flot.time.js
+    |                       jquery.flot.tooltip.min.js
+    |                       
+    +---Guides
+    |       Encien_Guide_Security_Attaque_Web_Ensab_Security.pdf
+    |       Guide_Attack_Blind_Sql_Injection.pdf
+    |       Guide_Attack_Foce_Brute_Avec_P4ssHunt3r.pdf
+    |       Guide_Attaque_Fichier_Uploaded.pdf
+    |       Guide_Attaque_Force_Brute_Avec_Burp_Suite.pdf
+    |       Guide_Attaque_Force_Brute_mots_de_passe_generes_ing|nierie_sociale.pdf
+    |       
+    +---Ressources
+        |   poc-common-passwords.txt
+        |   
+        +---Attaque
+        |       config.php
+        |       display_errors.php
+        |       XSS.php
+        |       
+        +---exploits
+                exploit_file.php
+                exploit_users.php
+                receive_file_content.php
+                receive_users.php
+                
