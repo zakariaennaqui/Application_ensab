@@ -1,0 +1,778 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+% Geometry settings
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Colors
+\definecolor{maincolor}{RGB}{0,51,102}
+\definecolor{secondcolor}{RGB}{204,0,0}
+\definecolor{lightgray}{RGB}{240,240,240}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=1cm]{Application ensab + guides/ensab_v2/vendor/img/uh1.png}}
+\fancyhead[R]{\includegraphics[height=1cm]{Application ensab + guides/ensab_v2/vendor/img/ensa.png}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Title formatting
+\titleformat{\section}{\Large\bfseries\color{maincolor}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{secondcolor}}{\thesubsection}{1em}{}
+
+% Listings configuration
+\lstset{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{lightgray},
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    showstringspaces=false
+}
+
+% Custom boxes
+\newtcolorbox{exercicebox}[1]{
+    colback=lightgray,
+    colframe=maincolor,
+    title=#1,
+    fonttitle=\bfseries,
+    boxrule=1pt
+}
+
+\newtcolorbox{answerbox}{
+    colback=white,
+    colframe=secondcolor,
+    title=Réponse,
+    fonttitle=\bfseries,
+    boxrule=1pt,
+    height=8cm
+}
+
+\newtcolorbox{screenshotbox}{
+    colback=white,
+    colframe=maincolor,
+    title=Screenshot,
+    fonttitle=\bfseries,
+    boxrule=1pt,
+    height=10cm
+}
+
+\begin{document}
+
+% Page de garde
+\begin{titlepage}
+    \centering
+
+    % Logos
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{Application ensab + guides/ensab_v2/vendor/img/uh1.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{Application ensab + guides/ensab_v2/vendor/img/ensa.png}
+    \end{minipage}
+
+    \vspace{2cm}
+
+    {\LARGE\bfseries Université Hassan 1er\par}
+    \vspace{0.5cm}
+    {\Large École Nationale des Sciences\par}
+    {\Large Appliquées -- Berrechid\par}
+
+    \vspace{3cm}
+
+    {\Huge\bfseries\color{maincolor} Compte Rendu de TP\par}
+    \vspace{1cm}
+    {\LARGE Sécurité informatique et cybersécurité\par}
+
+    \vspace{2cm}
+
+    {\large\bfseries Filière :} {\large Génie Informatique\par}
+    \vspace{0.3cm}
+    {\large\bfseries Semestre :} {\large S7\par}
+
+    \vfill
+
+    \begin{minipage}{0.45\textwidth}
+        \flushleft
+        {\bfseries Réalisé par :}\\
+        ENNAQUI Zakaria
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \flushright
+        {\bfseries Encadré par :}\\
+        Pr Abdelhalim HNINI
+    \end{minipage}
+
+    \vspace{1cm}
+
+    {\large Année universitaire : 2025/2026\par}
+
+\end{titlepage}
+
+% Table des matières
+\tableofcontents
+\newpage
+
+% TP 1: Injection SQL Classique
+\section{TP 1: Injection SQL Classique}
+
+\subsection{Objectifs}
+\begin{itemize}
+    \item Comprendre les vulnérabilités d'injection SQL
+    \item Exploiter les failles SQL pour accéder à des données non autorisées
+    \item Apprendre les techniques de protection contre les injections SQL
+\end{itemize}
+
+\subsection{Environnement de travail}
+\begin{exercicebox}{Configuration de l'environnement}
+\textbf{Étape 1:} Ouvrir l'application ensab\_v2\\
+\textbf{Étape 2:} Naviguer vers le module \texttt{sql\_injection}\\
+\textbf{Étape 3:} Accéder à la page de connexion
+\end{exercicebox}
+
+\begin{answerbox}
+% Décrivez ici les étapes de configuration effectuées
+\vspace{7cm}
+\end{answerbox}
+
+\subsection{Exercice 1: Identification de la vulnérabilité}
+
+\begin{exercicebox}{Analyse du code source}
+\textbf{Tâche:} Examinez le fichier \texttt{login.php} dans le dossier \texttt{sql\_injection}\\
+\textbf{Question:} Quelle ligne de code présente une vulnérabilité d'injection SQL?
+\end{exercicebox}
+
+\begin{answerbox}
+% Écrivez votre réponse ici
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot du code vulnérable
+\centering
+\textit{[Insérer le screenshot du code source ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 2: Exploitation de l'injection SQL}
+
+\begin{exercicebox}{Bypass d'authentification}
+\textbf{Étape 1:} Ouvrir la page de connexion\\
+\textbf{Étape 2:} Dans le champ "Username", coller: \texttt{admin' OR '1'='1}\\
+\textbf{Étape 3:} Dans le champ "Password", coller: \texttt{anything}\\
+\textbf{Étape 4:} Cliquer sur le bouton "Se connecter"\\
+\textbf{Question:} Que se passe-t-il? Expliquez pourquoi cette injection fonctionne.
+\end{exercicebox}
+
+\begin{answerbox}
+% Écrivez votre réponse et explication ici
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot de l'injection réussie
+\centering
+\textit{[Insérer le screenshot de l'exploitation ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 3: Extraction de données}
+
+\begin{exercicebox}{Utilisation d'UNION SELECT}
+\textbf{Tâche:} Utilisez une injection SQL de type UNION pour extraire les informations des utilisateurs\\
+\textbf{Payload à tester:} \texttt{admin' UNION SELECT username, password FROM users--}\\
+\textbf{Question:} Quelles informations avez-vous pu extraire?
+\end{exercicebox}
+
+\begin{answerbox}
+% Écrivez les informations extraites
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot des données extraites
+\centering
+\textit{[Insérer le screenshot des résultats ici]}
+\end{screenshotbox}
+
+\subsection{Solutions et recommandations}
+
+\begin{exercicebox}{Correction de la vulnérabilité}
+\textbf{Question:} Proposez des méthodes pour sécuriser le code contre les injections SQL
+\end{exercicebox}
+
+\begin{answerbox}
+% Écrivez vos recommandations de sécurité
+\vspace{7cm}
+\end{answerbox}
+
+\newpage
+
+% TP 2: Blind SQL Injection
+\section{TP 2: Blind SQL Injection}
+
+\subsection{Objectifs}
+\begin{itemize}
+    \item Comprendre le concept de Blind SQL Injection
+    \item Exploiter les vulnérabilités sans retour direct de données
+    \item Utiliser les techniques booléennes et temporelles
+\end{itemize}
+
+\subsection{Environnement de travail}
+\begin{exercicebox}{Configuration de l'environnement}
+\textbf{Étape 1:} Naviguer vers le module \texttt{blindsqli}\\
+\textbf{Étape 2:} Accéder à la page de connexion\\
+\textbf{Étape 3:} Observer le comportement de l'application
+\end{exercicebox}
+
+\begin{answerbox}
+% Décrivez vos observations initiales
+\vspace{7cm}
+\end{answerbox}
+
+\subsection{Exercice 1: Détection de la vulnérabilité Blind SQL}
+
+\begin{exercicebox}{Test de vulnérabilité}
+\textbf{Étape 1:} Tester avec un username valide\\
+\textbf{Étape 2:} Tester avec: \texttt{admin' AND '1'='1}\\
+\textbf{Étape 3:} Tester avec: \texttt{admin' AND '1'='2}\\
+\textbf{Question:} Quelle différence observez-vous entre les deux requêtes?
+\end{exercicebox}
+
+\begin{answerbox}
+% Écrivez vos observations
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot du test
+\centering
+\textit{[Insérer le screenshot du test ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 2: Exploitation booléenne}
+
+\begin{exercicebox}{Extraction de données caractère par caractère}
+\textbf{Tâche:} Utilisez une injection booléenne pour déterminer la longueur du mot de passe\\
+\textbf{Payload:} \texttt{admin' AND LENGTH(password)>5--}\\
+\textbf{Question:} Quelle est la longueur du mot de passe de l'administrateur?
+\end{exercicebox}
+
+\begin{answerbox}
+% Écrivez votre processus et résultat
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot du résultat
+\centering
+\textit{[Insérer le screenshot ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 3: Time-Based Blind SQL Injection}
+
+\begin{exercicebox}{Utilisation de SLEEP()}
+\textbf{Payload à tester:} \texttt{admin' AND IF(1=1, SLEEP(5), 0)--}\\
+\textbf{Question:} Comment cette technique vous permet-elle d'extraire des informations?
+\end{exercicebox}
+
+\begin{answerbox}
+% Expliquez le principe et vos résultats
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot démontrant le délai
+\centering
+\textit{[Insérer le screenshot ici]}
+\end{screenshotbox}
+
+\subsection{Solutions et recommandations}
+
+\begin{answerbox}
+% Proposez des solutions de sécurité
+\vspace{7cm}
+\end{answerbox}
+
+\newpage
+
+% TP 3: Attaque par Force Brute avec Burp Suite
+\section{TP 3: Attaque par Force Brute avec Burp Suite}
+
+\subsection{Objectifs}
+\begin{itemize}
+    \item Comprendre les attaques par force brute
+    \item Utiliser Burp Suite pour automatiser les tentatives de connexion
+    \item Identifier les vulnérabilités liées aux mots de passe faibles
+\end{itemize}
+
+\subsection{Configuration de Burp Suite}
+
+\begin{exercicebox}{Installation et configuration}
+\textbf{Étape 1:} Ouvrir Burp Suite\\
+\textbf{Étape 2:} Configurer le proxy dans votre navigateur (127.0.0.1:8080)\\
+\textbf{Étape 3:} Activer l'interception dans Burp Suite (Proxy > Intercept > Intercept is on)\\
+\textbf{Étape 4:} Naviguer vers la page de connexion du module \texttt{bruteForce}
+\end{exercicebox}
+
+\begin{answerbox}
+% Décrivez le processus de configuration
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot de la configuration de Burp Suite
+\centering
+\textit{[Insérer le screenshot de Burp Suite configuré ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 1: Capture de la requête HTTP}
+
+\begin{exercicebox}{Interception de la requête}
+\textbf{Étape 1:} Activer l'interception dans Burp Suite\\
+\textbf{Étape 2:} Tenter une connexion avec username: \texttt{admin} et password: \texttt{test}\\
+\textbf{Étape 3:} Observer la requête interceptée\\
+\textbf{Question:} Quels sont les paramètres envoyés dans la requête?
+\end{exercicebox}
+
+\begin{answerbox}
+% Décrivez la structure de la requête HTTP
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot de la requête interceptée
+\centering
+\textit{[Insérer le screenshot de la requête ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 2: Configuration de l'attaque Intruder}
+
+\begin{exercicebox}{Configuration d'Intruder}
+\textbf{Étape 1:} Envoyer la requête vers Intruder (Click droit > Send to Intruder)\\
+\textbf{Étape 2:} Dans l'onglet "Positions", sélectionner le paramètre password\\
+\textbf{Étape 3:} Dans l'onglet "Payloads", charger le fichier \texttt{poc-common-passwords.txt}\\
+\textbf{Étape 4:} Lancer l'attaque (Start attack)
+\end{exercicebox}
+
+\begin{answerbox}
+% Décrivez le processus de configuration
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot de la configuration d'Intruder
+\centering
+\textit{[Insérer le screenshot d'Intruder ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 3: Analyse des résultats}
+
+\begin{exercicebox}{Identification du mot de passe}
+\textbf{Question:} Quel est le mot de passe trouvé?\\
+\textbf{Question:} Comment avez-vous identifié la tentative réussie? (taille de réponse, code HTTP, etc.)
+\end{exercicebox}
+
+\begin{answerbox}
+% Écrivez vos résultats et analyse
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot des résultats de l'attaque
+\centering
+\textit{[Insérer le screenshot des résultats ici]}
+\end{screenshotbox}
+
+\subsection{Solutions et recommandations}
+
+\begin{exercicebox}{Mesures de protection}
+\textbf{Question:} Quelles mesures de sécurité peuvent empêcher les attaques par force brute?
+\end{exercicebox}
+
+\begin{answerbox}
+% Proposez des solutions de sécurité
+\vspace{7cm}
+\end{answerbox}
+
+\newpage
+
+% TP 4: Force Brute avec P4ssHunt3r
+\section{TP 4: Attaque par Force Brute avec P4ssHunt3r}
+
+\subsection{Objectifs}
+\begin{itemize}
+    \item Utiliser l'outil P4ssHunt3r pour les attaques par force brute
+    \item Comprendre les techniques d'ingénierie sociale
+    \item Générer des dictionnaires de mots de passe personnalisés
+\end{itemize}
+
+\subsection{Installation de P4ssHunt3r}
+
+\begin{exercicebox}{Installation}
+\textbf{Étape 1:} Ouvrir un terminal ou PowerShell\\
+\textbf{Étape 2:} Installer avec: \texttt{pip install p4sshunt3r}\\
+\textbf{Étape 3:} Vérifier l'installation: \texttt{p4sshunt3r --help}
+\end{exercicebox}
+
+\begin{answerbox}
+% Décrivez le processus d'installation
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot de l'installation
+\centering
+\textit{[Insérer le screenshot de l'installation ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 1: Génération d'un dictionnaire personnalisé}
+
+\begin{exercicebox}{Création d'un dictionnaire basé sur l'ingénierie sociale}
+\textbf{Scénario:} L'utilisateur cible se nomme "Mohamed", né en 1990, aime le football\\
+\textbf{Commande:} \texttt{p4sshunt3r -n mohamed -b 1990 -k football -o custom\_dict.txt}\\
+\textbf{Question:} Combien de mots de passe ont été générés?
+\end{exercicebox}
+
+\begin{answerbox}
+% Écrivez le nombre et quelques exemples
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot du dictionnaire généré
+\centering
+\textit{[Insérer le screenshot ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 2: Attaque avec le dictionnaire personnalisé}
+
+\begin{exercicebox}{Utilisation du dictionnaire}
+\textbf{Étape 1:} Utiliser le dictionnaire généré avec Burp Suite ou un autre outil\\
+\textbf{Étape 2:} Lancer l'attaque contre le module bruteForce (niveau medium)\\
+\textbf{Question:} Le dictionnaire personnalisé est-il plus efficace qu'un dictionnaire générique?
+\end{exercicebox}
+
+\begin{answerbox}
+% Comparez les résultats
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot des résultats
+\centering
+\textit{[Insérer le screenshot ici]}
+\end{screenshotbox}
+
+\subsection{Solutions et recommandations}
+
+\begin{answerbox}
+% Proposez des solutions contre l'ingénierie sociale
+\vspace{7cm}
+\end{answerbox}
+
+\newpage
+
+% TP 5: Force Brute avec mots de passe générés par ingénierie sociale
+\section{TP 5: Force Brute et Ingénierie Sociale}
+
+\subsection{Objectifs}
+\begin{itemize}
+    \item Comprendre les techniques d'ingénierie sociale
+    \item Créer des profils utilisateurs pour générer des mots de passe probables
+    \item Analyser la faiblesse des mots de passe prévisibles
+\end{itemize}
+
+\subsection{Exercice 1: Collecte d'informations}
+
+\begin{exercicebox}{Profiling de la cible}
+\textbf{Scénario:} Vous devez créer un profil pour l'utilisateur "admin"\\
+\textbf{Informations à collecter:}
+\begin{itemize}
+    \item Nom et prénom
+    \item Date de naissance
+    \item Hobbies et centres d'intérêt
+    \item Noms de famille
+    \item Animaux de compagnie
+\end{itemize}
+\textbf{Question:} Où pourriez-vous trouver ces informations? (réseaux sociaux, etc.)
+\end{exercicebox}
+
+\begin{answerbox}
+% Décrivez les sources d'information
+\vspace{7cm}
+\end{answerbox}
+
+\subsection{Exercice 2: Génération de mots de passe probables}
+
+\begin{exercicebox}{Création de patterns}
+\textbf{Exemples de patterns:}
+\begin{itemize}
+    \item nom + année: \texttt{mohamed1990}
+    \item prénom + date\_naissance: \texttt{ahmed15031985}
+    \item hobby + chiffres: \texttt{football123}
+    \item nom\_animal + année: \texttt{max2020}
+\end{itemize}
+\textbf{Question:} Créez une liste de 10 mots de passe probables basés sur le profil
+\end{exercicebox}
+
+\begin{answerbox}
+% Listez vos mots de passe générés
+\vspace{7cm}
+\end{answerbox}
+
+\subsection{Exercice 3: Test d'efficacité}
+
+\begin{exercicebox}{Taux de réussite}
+\textbf{Question:} Comparez le taux de réussite entre:
+\begin{itemize}
+    \item Dictionnaire générique
+    \item Dictionnaire personnalisé basé sur l'ingénierie sociale
+\end{itemize}
+\end{exercicebox}
+
+\begin{answerbox}
+% Analysez et comparez les résultats
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez vos graphiques ou tableaux comparatifs
+\centering
+\textit{[Insérer les comparaisons ici]}
+\end{screenshotbox}
+
+\subsection{Solutions et recommandations}
+
+\begin{answerbox}
+% Proposez des recommandations pour créer des mots de passe robustes
+\vspace{7cm}
+\end{answerbox}
+
+\newpage
+
+% TP 6: Attaque par Upload de Fichiers
+\section{TP 6: Attaque par Upload de Fichiers}
+
+\subsection{Objectifs}
+\begin{itemize}
+    \item Comprendre les vulnérabilités liées aux uploads de fichiers
+    \item Exploiter les failles de validation pour uploader des fichiers malveillants
+    \item Apprendre les techniques de protection
+\end{itemize}
+
+\subsection{Environnement de travail}
+
+\begin{exercicebox}{Configuration}
+\textbf{Étape 1:} Naviguer vers le module \texttt{upload\_file}\\
+\textbf{Étape 2:} Observer la fonctionnalité d'upload\\
+\textbf{Étape 3:} Identifier les restrictions éventuelles
+\end{exercicebox}
+
+\begin{answerbox}
+% Décrivez l'interface d'upload
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot de la page d'upload
+\centering
+\textit{[Insérer le screenshot ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 1: Upload d'un fichier légitime}
+
+\begin{exercicebox}{Test initial}
+\textbf{Étape 1:} Uploader une image légitime (JPG ou PNG)\\
+\textbf{Étape 2:} Observer où le fichier est stocké\\
+\textbf{Question:} Quelle est l'URL du fichier uploadé?
+\end{exercicebox}
+
+\begin{answerbox}
+% Écrivez l'URL et vos observations
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot de l'upload réussi
+\centering
+\textit{[Insérer le screenshot ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 2: Tentative d'upload d'un fichier PHP}
+
+\begin{exercicebox}{Bypass de validation}
+\textbf{Étape 1:} Créer un fichier PHP simple:\\
+\begin{lstlisting}[language=PHP]
+<?php
+phpinfo();
+?>
+\end{lstlisting}
+\textbf{Étape 2:} Sauvegarder comme \texttt{shell.php}\\
+\textbf{Étape 3:} Tenter de l'uploader\\
+\textbf{Question:} L'upload est-il bloqué?
+\end{exercicebox}
+
+\begin{answerbox}
+% Décrivez le résultat de la tentative
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot de la tentative
+\centering
+\textit{[Insérer le screenshot ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 3: Techniques de bypass}
+
+\begin{exercicebox}{Bypass d'extension}
+\textbf{Techniques à tester:}
+\begin{enumerate}
+    \item Double extension: \texttt{shell.php.jpg}
+    \item Extension null byte: \texttt{shell.php\%00.jpg}
+    \item Changement du Content-Type dans Burp Suite
+    \item Extension alternative: \texttt{shell.phtml}, \texttt{shell.php5}
+\end{enumerate}
+\textbf{Question:} Quelle technique a fonctionné?
+\end{exercicebox}
+
+\begin{answerbox}
+% Décrivez la technique réussie et pourquoi
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot du bypass réussi
+\centering
+\textit{[Insérer le screenshot ici]}
+\end{screenshotbox}
+
+\subsection{Exercice 4: Exécution du code malveillant}
+
+\begin{exercicebox}{Accès au shell}
+\textbf{Étape 1:} Accéder au fichier uploadé via son URL\\
+\textbf{Étape 2:} Observer l'exécution du code PHP\\
+\textbf{Question:} Quelles informations avez-vous pu obtenir?
+\end{exercicebox}
+
+\begin{answerbox}
+% Décrivez les informations obtenues
+\vspace{7cm}
+\end{answerbox}
+
+\begin{screenshotbox}
+% Insérez votre screenshot de l'exécution du code
+\centering
+\textit{[Insérer le screenshot ici]}
+\end{screenshotbox}
+
+\subsection{Solutions et recommandations}
+
+\begin{exercicebox}{Mesures de sécurité}
+\textbf{Question:} Proposez des mesures pour sécuriser la fonctionnalité d'upload
+\end{exercicebox}
+
+\begin{answerbox}
+% Listez les mesures de sécurité recommandées
+\vspace{7cm}
+\end{answerbox}
+
+\newpage
+
+% Conclusion générale
+\section{Conclusion Générale}
+
+\subsection{Synthèse des TPs}
+
+\begin{answerbox}
+% Rédigez une synthèse des apprentissages de tous les TPs
+\vspace{10cm}
+\end{answerbox}
+
+\subsection{Compétences acquises}
+
+\begin{exercicebox}{Bilan des compétences}
+Listez les compétences techniques acquises durant ces TPs:
+\begin{itemize}
+    \item[$\square$] Exploitation d'injections SQL classiques
+    \item[$\square$] Exploitation de Blind SQL Injection
+    \item[$\square$] Utilisation de Burp Suite pour les tests de sécurité
+    \item[$\square$] Techniques de force brute
+    \item[$\square$] Ingénierie sociale pour la génération de mots de passe
+    \item[$\square$] Exploitation des vulnérabilités d'upload de fichiers
+    \item[$\square$] Compréhension des mesures de sécurité et protections
+\end{itemize}
+\end{exercicebox}
+
+\subsection{Recommandations générales de sécurité}
+
+\begin{answerbox}
+% Rédigez vos recommandations générales
+\vspace{10cm}
+\end{answerbox}
+
+\newpage
+
+% Annexes
+\section*{Annexes}
+\addcontentsline{toc}{section}{Annexes}
+
+\subsection*{Annexe A: Commandes utiles}
+
+\begin{lstlisting}[language=bash]
+# Burp Suite - Configuration proxy
+http://127.0.0.1:8080
+
+# Installation P4ssHunt3r
+pip install p4sshunt3r
+
+# Exemple de payload SQL
+admin' OR '1'='1'--
+admin' UNION SELECT username,password FROM users--
+
+# Exemple Time-Based Blind SQL
+admin' AND IF(1=1, SLEEP(5), 0)--
+\end{lstlisting}
+
+\subsection*{Annexe B: Ressources supplémentaires}
+
+\begin{itemize}
+    \item OWASP Top 10: \url{https://owasp.org/www-project-top-ten/}
+    \item PortSwigger Web Security Academy: \url{https://portswigger.net/web-security}
+    \item HackTheBox: \url{https://www.hackthebox.eu/}
+    \item TryHackMe: \url{https://tryhackme.com/}
+\end{itemize}
+
+\subsection*{Annexe C: Glossaire}
+
+\begin{description}
+    \item[SQL Injection] Technique d'injection de code SQL malveillant dans les requêtes
+    \item[Blind SQL Injection] Injection SQL sans retour direct de données
+    \item[Brute Force] Attaque par essais successifs pour trouver un mot de passe
+    \item[Burp Suite] Suite d'outils pour les tests de sécurité des applications web
+    \item[Ingénierie sociale] Manipulation psychologique pour obtenir des informations
+    \item[Upload vulnerability] Vulnérabilité permettant l'upload de fichiers malveillants
+    \item[Web Shell] Interface permettant l'exécution de commandes sur un serveur
+\end{description}
+
+\end{document}
